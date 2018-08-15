@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/weather.css">
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+          <input type="submit" class="ghost-button" value="Get Weather">
+        </form>
+        <% if(weather !== null){ %>
+          <div id="page">
+          <h1><%= city %></h1><hr>
+          <h2><%= abc %></h2>
+
+          &nbsp;<i class="fa fa-thermometer"></i>Temperature :<%= weather %>&deg; C<br><hr>
+          &nbsp;<i class="wi wi-thermometer-internal"></i>Pressure :<%= weather2 %><br><hr>
+          &nbsp;<i class="fa fa-cloud"></i>Humidity :<%= wea3 %><br><hr>
+          &nbsp;<i class="fa fa-thermometer-0"></i> Minimum Temperature :<%= wea4 %>&deg; C<br>
+          &nbsp;<i class="fa fa-thermometer-4"></i> Maximum Temperature :<%= wea5 %>&deg; C<br><hr>
+          &nbsp;<i class="wi wi-windy"></i> Wind speed :<%= wea6 %><br><hr>
+          &nbsp;<i class="fa fa-cloud" style="color:#f2dede;"></i>Clouds :<%= wea7 %>
+          </div>
+
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+  </body>
+</html>
